@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "state-preparation"
+version = "0.1.0"
+description = ""
+authors = ["Joseph Niblo <61010077+josephniblo@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+numpy = "^2.2.2"
+qutip = "^5.1.1"
+matplotlib = "^3.10.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

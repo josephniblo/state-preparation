@@ -12,7 +12,7 @@ def hwp_matrix(theta) -> qt.Qobj:
     Returns:
     numpy.ndarray: The 2x2 matrix representing the HWP operation.
     """
-    return qt.Qobj(
+    return 1j * qt.Qobj(
         (
             [np.cos(2 * theta), np.sin(2 * theta)],
             [np.sin(2 * theta), -np.cos(2 * theta)],
@@ -30,15 +30,15 @@ def qwp_matrix(theta) -> qt.Qobj:
     Returns:
     numpy.ndarray: The 2x2 matrix representing the QWP operation.
     """
-    return qt.Qobj(
+    return (1 / np.sqrt(2)) * qt.Qobj(
         [
             [
-                np.cos(theta) ** 2 - 1j * np.sin(theta) ** 2,
-                (1 - 1j) * np.sin(theta) * np.cos(theta),
+                1 + 1j * np.cos(2 * theta),
+                1j * np.sin(2 * theta),
             ],
             [
-                (1 - 1j) * np.sin(theta) * np.cos(theta),
-                -1j * np.sin(theta) ** 2 + np.cos(theta) ** 2,
+                1j * np.sin(2 * theta),
+                1 - 1j * np.cos(2 * theta),
             ],
         ]
     )
@@ -63,4 +63,3 @@ if __name__ == "__main__":
 
     print("State after HWP:", state_after_hwp)
     print("State after QWP:", state_after_qwp)
-

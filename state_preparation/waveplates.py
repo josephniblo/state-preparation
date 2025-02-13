@@ -51,12 +51,11 @@ def get_hwp_qwp_from_target_state(target_state: qt.Qobj) -> tuple[float, float]:
         ]
     )
 
-    # remove global phase
+    # remove global phase and normalise
     phase_factor = np.exp(-1j * np.angle(target_state_rl_basis[0]))[0]
     target_state_rl_basis = phase_factor * target_state_rl_basis
     target_state_rl_basis = target_state_rl_basis.unit()
 
-    # |psi> = cos(theta / 2) |R> + exp(i*psi) sin(theta / 2) |L>
     psi = 2 * np.arccos(target_state_rl_basis[0])[0]
     chi = np.angle(target_state_rl_basis[1])[0]
 

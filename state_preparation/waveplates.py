@@ -56,7 +56,7 @@ def get_hwp_qwp_from_target_state(target_state: qt.Qobj) -> tuple[float, float]:
     target_state_rl_basis = phase_factor * target_state_rl_basis
     target_state_rl_basis = target_state_rl_basis.unit()
 
-    psi = 2 * np.arccos(target_state_rl_basis[0])[0]
+    psi = 2 * np.arccos(target_state_rl_basis[0])[0].real
     chi = np.angle(target_state_rl_basis[1])[0]
 
     omega = np.pi / 2 - psi

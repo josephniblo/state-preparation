@@ -60,13 +60,8 @@ def get_hwp_qwp_from_target_state(target_state: qt.Qobj) -> tuple[float, float]:
     chi = np.angle(target_state_rl_basis[1])[0]
 
     omega = np.pi / 2 - psi
-    print(omega)
 
     theta_hwp = (chi - omega) / 4
     theta_qwp = chi / 2
-
-    print(target_state)
-    print(target_state_rl_basis)
-    print(theta_hwp, theta_qwp)
 
     return theta_hwp, theta_qwp

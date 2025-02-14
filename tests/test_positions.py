@@ -50,8 +50,6 @@ def test_get_hwp_qwp_from_target_state_h():
     qwp = utils.qwp_matrix(theta_qwp)
     state_after_qwp = qwp * state_after_hwp
 
-    print(hwp, qwp)
-
     # check the final state is close to the target state, ignoring global phase
     assert (
         qt.tracedist(state_after_qwp, target_state) < 1e-10

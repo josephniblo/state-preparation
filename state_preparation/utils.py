@@ -60,6 +60,3 @@ if __name__ == "__main__":
     # Apply the matrices to the state
     state_after_hwp = hwp * state
     state_after_qwp = qwp * state_after_hwp
-
-    print("State after HWP:", state_after_hwp)
-    print("State after QWP:", state_after_qwp)

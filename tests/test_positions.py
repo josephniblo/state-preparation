@@ -127,7 +127,7 @@ def test_get_hwp_qwp_from_target_state_ah_bv():
 
     initial_state = h.unit()  # |H>
 
-    target_state = (0.6 * h + 0.8j * v).unit()  # |H> + i|V>
+    target_state = (0.6 * h + 0.8j * v).unit()  # 0.6|H> + 0.8i|V>
 
     theta_hwp, theta_qwp = wp.get_hwp_qwp_from_target_state(target_state)
 

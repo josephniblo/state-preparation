@@ -46,8 +46,8 @@ def get_hwp_qwp_from_target_state(target_state: qt.Qobj) -> tuple[float, float]:
     # Rewrite psi in the R, L basis
     target_state_rl_basis = qt.Qobj(
         [
-            1 / 2 * (target_state[0] - 1j * target_state[1]),
-            1 / 2 * (target_state[0] + 1j * target_state[1]),
+            1 / np.sqrt(2) * (target_state[0] - 1j * target_state[1]),
+            1 / np.sqrt(2) * (target_state[0] + 1j * target_state[1]),
         ]
     )
 
